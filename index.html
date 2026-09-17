@@ -275,7 +275,7 @@ render();
 function notifyParentHeight(){
   try{
     const h=Math.max(
-      document.documentElement.scrollHeight,
+      document.body ? document.body.scrollHeight : 0,
       document.body ? document.body.scrollHeight : 0
     );
     window.parent.postMessage(
